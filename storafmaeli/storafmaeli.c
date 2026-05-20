@@ -11,14 +11,8 @@ int main(void)
 {
     int a;
     scanf("%d", &a);
-    if (a % 10)
-    {
-        printf("Neibb\n");
-    }
-    else
-    {
-        printf("Jebb\n");
-    }
+
+    printf("%s\n", (a % 10 == 0) ? "Jebb" : "Neibb");
 
     return 0;
 }
