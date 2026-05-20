@@ -126,17 +126,17 @@ int main(void)
 
     for (int i = 0; i < n; i++)
     {
-
         char *line = NULL;
         size_t cap = 0;
         ssize_t len;
         int r;
+
         if ((len = getline(&line, &cap, stdin)) != -1)
         {
             r = isqrt(len - 1); // -1 to ignore the newline character
-            for (int j = r - 1; j >= 0; j--)
-                for (int k = 0; k < r; k++)
-                    putchar(line[j + k * r]);
+            for (int col = r - 1; col >= 0; col--)
+                for (int row = 0; row < r; row++)
+                    putchar(line[col + row * r]);
             putchar('\n');
             free(line);
         }
